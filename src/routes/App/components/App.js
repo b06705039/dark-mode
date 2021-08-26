@@ -5,7 +5,7 @@ import "../styles/_app.scss";
 import styled from "styled-components";
 
 const DarkModeIcon = styled(FontAwesomeIcon)`
-  color: ${({ darkMode }) => (darkMode ? "black" : "#FFA500")};
+  color: ${({ darkMode }) => (darkMode ? "#FFA500" : "black")};
 `;
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
   };
 
   return (
-    <div className={"app dark-mode"}>
+    <div className={darkMode ? "app dark-mode" : "app"}>
       <div className="level">
         <div>
           <h1 className="title">Dark Mode Challenge</h1>
@@ -29,13 +29,13 @@ function App() {
           {darkMode ? (
             <DarkModeIcon
               darkMode={darkMode}
-              icon={faMoon}
+              icon={faSun}
               onClick={() => changeMode()}
             />
           ) : (
             <DarkModeIcon
               darkMode={darkMode}
-              icon={faSun}
+              icon={faMoon}
               onClick={() => changeMode()}
             />
           )}
