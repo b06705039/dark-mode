@@ -4,9 +4,9 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import "../styles/_app.scss";
 import styled from "styled-components";
 
-// const DarkModeIcon = styled(FontAwesomeIcon)`
-//   color: ${({ darkMode }) => (darkMode ? "#FFA500" : "black")};
-// `;
+const DarkModeIcon = styled(FontAwesomeIcon)`
+  color: ${({ darkMode }) => (darkMode ? "black" : "#FFA500")};
+`;
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -18,7 +18,7 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <div className={"app dark-mode"}>
       <div className="level">
         <div>
           <h1 className="title">Dark Mode Challenge</h1>
@@ -26,7 +26,7 @@ function App() {
 
         {/* --The button that should toggle dark mode-- */}
         <button className="app__dark-mode-btn icon level-right">
-          {/* {darkMode ? (
+          {darkMode ? (
             <DarkModeIcon
               darkMode={darkMode}
               icon={faMoon}
@@ -38,8 +38,7 @@ function App() {
               icon={faSun}
               onClick={() => changeMode()}
             />
-          )} */}
-          <FontAwesomeIcon icon={faMoon} />
+          )}
         </button>
       </div>
 
